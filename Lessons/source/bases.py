@@ -20,8 +20,9 @@ def decode(digits, base):
 
     result = 0
     digits1 = digits[::-1]
+    alpha = string.digits + string.ascii_letters
     for i in range(len(digits)):
-        t = string.hexdigits.index(digits1[i])
+        t = alpha.index(digits1[i])
         result += t * (base ** i)
     return result
 
@@ -35,14 +36,14 @@ def encode(number, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
-    
+
     t = number
     result = ""
-    digits = string.digits + string.ascii_letters
+    alpha = string.digits + string.ascii_letters
     while t > 0:
         # add remainder
         if t % base > 9:
-            result += digits[t % base]
+            result += alpha[t % base]
         else:
             result += str(t % base)
         # floor division
