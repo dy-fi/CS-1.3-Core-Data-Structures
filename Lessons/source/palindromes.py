@@ -23,11 +23,7 @@ def is_palindrome_iterative(text):
         if i not in string.ascii_lowercase:
             text = text.replace(i, "")
     txet = text[::-1]
-    # return text == txet lmao
-    for i in range(len(text)):
-        if text[i] != txet[i]:
-            return False
-    return True
+    return text == txet #lmao
 
 
 def is_palindrome_recursive(text, left=None, right=None):
