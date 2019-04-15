@@ -16,9 +16,13 @@ def find_index(text, pattern):
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
+    if pattern == '':
+        return 0
+        
     for i in range(len(text)):
-        if text[i:i + len(pattern)] == pattern or pattern == '':
-            return i
+        if text[i] == pattern[0]:
+            if text[i:i + len(pattern)] == pattern:
+                return i
     return None
 
 def find_all_indexes(text, pattern):

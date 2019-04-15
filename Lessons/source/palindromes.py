@@ -27,10 +27,9 @@ def is_palindrome_iterative(text):
 
 
 def is_palindrome_recursive(text, left=None, right=None):
-    text = text.lower()
     if left == None:
+        text = text.lower()
         left = 0
-    if right == None:
         right = len(text) - 1
 
     if left == right or left > right:

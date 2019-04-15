@@ -1,9 +1,15 @@
 [
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_mirrored_strings",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_mixed_casing",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_mixed_casing_and_punctuation",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_non_palindromic_strings",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_mixed_casing",
-  "palindromes_test.py::TestPalindromes::test_is_palindrome_with_whitespace_and_punctuation"
+  "linkedlist_test.py::NodeTest::test_init",
+  "linkedlist_test.py::LinkedListTest::test_append",
+  "linkedlist_test.py::LinkedListTest::test_delete",
+  "linkedlist_test.py::LinkedListTest::test_find",
+  "linkedlist_test.py::LinkedListTest::test_get_at_index",
+  "linkedlist_test.py::LinkedListTest::test_init",
+  "linkedlist_test.py::LinkedListTest::test_init_with_list",
+  "linkedlist_test.py::LinkedListTest::test_insert_at_index",
+  "linkedlist_test.py::LinkedListTest::test_items",
+  "linkedlist_test.py::LinkedListTest::test_length",
+  "linkedlist_test.py::LinkedListTest::test_prepend",
+  "linkedlist_test.py::LinkedListTest::test_replace",
+  "linkedlist_test.py::LinkedListTest::test_size"
 ]
