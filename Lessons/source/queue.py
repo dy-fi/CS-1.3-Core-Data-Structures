@@ -29,7 +29,7 @@ class LinkedQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(1) LinkedList append is constant because we have head pointer"""
+        Running time: O(1) LinkedList append is constant because we have tail pointer"""
         return self.list.append(item)
 
     def front(self):
