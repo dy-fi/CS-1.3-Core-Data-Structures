@@ -79,6 +79,7 @@ class LinkedList(object):
         if not (0 <= index < self.size):
             raise ValueError('List index out of range: {}'.format(index))
 
+        # start at head and climb to node
         node = self.head
         for _ in range(index):
             node = node.next
@@ -94,19 +95,22 @@ class LinkedList(object):
         if not (0 <= index <= self.size):
             raise ValueError('List index out of range: {}'.format(index))
         
+        # check for fastest cases
         if index == 0:
             return self.prepend(item)
         if index == self.size:
             return self.append(item)
         
+        # climb to node
         curr = self.head
         for _ in range(index - 1):
             curr = curr.next
 
+        # set node
         node = Node(item)
         node.next = curr.next
         curr.next = node
-        self.size += 1 
+        self.size += 1
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
@@ -161,15 +165,25 @@ class LinkedList(object):
     def replace(self, old_item, new_item):
         """Replace the given old_item in this linked list with given new_item
         using the same node, or raise ValueError if old_item is not found.
-        Best case running time: ??? under what conditions? 
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1)
+        Worst case running time: O(n)"""
 
+        # check if old_item is in tail
+        if self.tail.data == old_item:
+            self.tail.data = new_item
+            return
+
+        # start at head
         curr = self.head
-        while(curr != None):
+        while curr != None:
+            # found data to replace
             if curr.data == old_item:
                 curr.data = new_item
                 return
+            # or climb through list
             curr = curr.next
+        # not found
+        # else:
         raise ValueError('Value not found: {}'.format(old_item))
             
 

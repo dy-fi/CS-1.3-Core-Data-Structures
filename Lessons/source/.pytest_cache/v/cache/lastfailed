@@ -1,1 +1,4 @@
-{}
+{
+  "linkedlist_test.py::LinkedListTest": true,
+  "linkedlist_test.py::NodeTest": true
+}

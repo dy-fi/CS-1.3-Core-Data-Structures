@@ -50,6 +50,16 @@ def encode(number, base):
         t = t // base
     return result[::-1]
 
+def encode_fractions(number, base):
+    answer = []
+    done = False
+    while not done:
+        num = number * base
+        num_str = str(num)
+        answer += int(num_str[0])
+        if num == int(num):
+            done = True
+    return int('.' + ''.join(answer))
 
 def convert(digits, base1, base2):
     """Convert given digits in base1 to digits in base2.

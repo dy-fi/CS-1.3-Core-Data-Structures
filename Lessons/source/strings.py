@@ -1,7 +1,10 @@
 #!python
 
+import random
+
 def contains(text, pattern):
-    """Return a boolean indicating whether pattern occurs in text."""
+    """Return a boolean indicating whether pattern occurs in text.
+    O(n)"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
@@ -12,7 +15,8 @@ def contains(text, pattern):
 
 def find_index(text, pattern):
     """Return the starting index of the first occurrence of pattern in text,
-    or None if not found."""
+    or None if not found.
+    O(n)"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
@@ -27,7 +31,8 @@ def find_index(text, pattern):
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
-    or an empty list if not found."""
+    or an empty list if not found.
+    O(n)"""
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
@@ -36,6 +41,23 @@ def find_all_indexes(text, pattern):
         if text[i:i + len(pattern)] == pattern or pattern == '':
             answer.append(i)
     return answer
+
+def get_dictionary():
+    with open('usr/share/dict/words') as dictionary:
+        return dictionary.read()
+
+def generate_permutation(word):
+    l = list(word)
+    random.shuffle(l)
+    return ''.join(l)
+
+def generate_anagram(word):
+    dictionary = get_dictionary()
+    found = False
+    while not found:
+        new = generate_permutation(word)
+        if new in dictionary:
+            return new
 
 def test_string_algorithms(text, pattern):
     found = contains(text, pattern)

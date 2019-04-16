@@ -17,8 +17,9 @@ class StringsTest(unittest.TestCase):
         assert contains('abc', 'abc') is True  # all strings contain themselves
         assert contains('aaa', 'a') is True  # multiple occurrences
         assert contains('aaa', 'aa') is True  # overlapping pattern
-        # TODO: Write more positive test cases with assert is True statements
-        # ...
+        assert contains('cccac', 'ca') is True # mixed case
+        assert contains('hippopotamus', 'popo') is True # longer word
+        assert contains('12345', '34') is True # numbers as a string
 
     def test_contains_with_non_matching_patterns(self):
         # Negative test cases (counterexamples) with non-matching patterns
@@ -26,8 +27,8 @@ class StringsTest(unittest.TestCase):
         assert contains('abc', 'ac') is False  # important to test close cases
         assert contains('abc', 'az') is False  # first letter, but not last
         assert contains('abc', 'abz') is False  # first 2 letters, but not last
-        # TODO: Write more negative test cases with assert is False statements
-        # ...
+        assert contains('hippopotamus', 'opop') # reversed pattern should'nt match
+        assert contains('134', '135') # number as a string
 
     def test_contains_with_complex_patterns(self):
         # Difficult test cases (examples) with complex patterns
@@ -35,9 +36,7 @@ class StringsTest(unittest.TestCase):
         assert contains('banana', 'na') is True  # multiple occurrences
         assert contains('ababc', 'abc') is True  # overlapping prefix
         assert contains('bananas', 'nas') is True  # overlapping prefix
-        # TODO: Write more test cases that check complex patterns or edge cases
-        # You'll need a lot more than this to test your algorithm's robustness
-        # ...
+        assert contains('123123aadcccbkajdl343aad', '3aad') is True # long string with numbers, multiple occurences
 
     def test_find_index_with_matching_patterns(self):
         # Positive test cases (examples) with matching patterns
