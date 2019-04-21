@@ -83,7 +83,6 @@ class LinkedList(object):
         node = self.head
         for _ in range(index):
             node = node.next
-
         return node.data
             
     def insert_at_index(self, index, item):
