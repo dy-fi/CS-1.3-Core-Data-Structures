@@ -1,4 +1,5 @@
 {
   "linkedlist_test.py::LinkedListTest": true,
-  "linkedlist_test.py::NodeTest": true
+  "linkedlist_test.py::NodeTest": true,
+  "set_test.py::SetTest::test_union_intersection_difference": true
 }

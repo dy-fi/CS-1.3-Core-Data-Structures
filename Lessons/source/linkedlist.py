@@ -188,8 +188,8 @@ class LinkedList(object):
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1) item is head
+        Worst case running time: O(n) item is tail"""
         # Start at the head node
         node = self.head
         # Keep track of the node before the one containing the given item

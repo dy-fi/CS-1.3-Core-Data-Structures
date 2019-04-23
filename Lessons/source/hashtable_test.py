@@ -141,6 +141,19 @@ class HashTableTest(unittest.TestCase):
         with self.assertRaises(KeyError):
             ht.delete('A')  # Key does not exist
 
+    def test_collisions(self):
+        ht = HashTable()
+        ht.set('I', 1)
+        ht.set('I', 3) # overwrite I
+        ht.set('K', 3) # add another value of 3
+        ht.set('K', 1) # overwrite K
+        assert ht.length() == 2
+        assert ht.size == 2
+        ht.delete('I') # delete I
+        ht.delete('K') # delete K
+        assert ht.contains('I') == False
+        assert ht.contains('K') == False
+
 
 if __name__ == '__main__':
     unittest.main()

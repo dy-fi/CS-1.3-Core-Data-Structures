@@ -37,17 +37,10 @@ def find_all_indexes(text, pattern):
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
 
     answer = []
-    # for i in range(len(text)):
-    #     if text[i:i + len(pattern)] == pattern or pattern == '':
-    #         answer.append(i)
-    # return answer
-    while True:
-        next = find_index(text, pattern)
-
-        if not next:
-            return answer
-            
-        answer.append(next)
+    for i in range(len(text)):
+        if text[i:i + len(pattern)] == pattern or pattern == '':
+            answer.append(i)
+    return answer
         
             
 
